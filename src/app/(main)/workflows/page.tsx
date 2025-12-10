@@ -1,9 +1,12 @@
+import { WorkFlowsView } from '@/feature/workflows/ui/views/connesctions-view'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   return (
-    <div>page</div>
+    <div className=' flex flex-col gap-4 relative'>
+        <WorkFlowsView/>
+    </div>
   )
 }
 
-export default page
+export default Page
