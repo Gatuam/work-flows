@@ -4,11 +4,11 @@ import React from "react";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <SidebarProvider defaultOpen={false}>
+    <SidebarProvider defaultOpen={true}>
       <AppSidebar />
       <SidebarInset className=" bg-accent/20">
         <main
-          className="p-2 w-full
+          className=" w-full
  bar overflow-x-hidden! h-full"
         >
           {children}

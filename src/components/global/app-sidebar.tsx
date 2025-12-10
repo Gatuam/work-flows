@@ -13,6 +13,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { menuItems } from "@/const";
 import { CreditCardIcon, LogOutIcon, User2Icon } from "lucide-react";
@@ -34,14 +35,24 @@ export const AppSidebar = () => {
     <Sidebar className=" h-screen" collapsible="icon">
       <SidebarHeader className="flex border-b py-1">
         <div className=" flex items-center w-full justify-between">
-          <SidebarMenu className="flex w-full">
+          <SidebarMenu className="flex ">
             <SidebarMenuButton asChild className="flex w-full">
-              <Link href="/dashboard" className="flex gap-2 ">
-                <Image width={12} height={12} alt="logo" src="/logo.svg" />
-                <span className=" font-semibold text-sm">D-invoice</span>
+              <Link
+                href="/dashboard"
+                className="flex gap-2  group-data-[state=collapsed]:hidden"
+              >
+                <Image
+                  width={22}
+                  height={22}
+                  alt="logo"
+                  src="/logo.svg"
+                  className=""
+                />
+                <span className=" font-semibold text-sm">WorkFlows</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenu>
+          <SidebarTrigger />
         </div>
       </SidebarHeader>
       <SidebarContent>
@@ -59,7 +70,7 @@ export const AppSidebar = () => {
                           : pathname.startsWith(it.url)
                       }
                       asChild
-                      className=" gap-x-4 h-9 px-4"
+                      className={" gap-x-4 h-9 px-4"}
                     >
                       <Link prefetch href={it.url}>
                         <it.icon className=" size-4 " />
@@ -101,16 +112,6 @@ export const AppSidebar = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <SidebarMenuButton
-              onClick={() => {
-                router.push("/account");
-              }}
-              tooltip={"Account"}
-              className=" gap-x-4"
-            >
-              <User2Icon className=" size-4" />
-              <span>Account </span>
-            </SidebarMenuButton>
             <SidebarMenuButton tooltip={"update to pro"} className=" gap-x-4">
               <CreditCardIcon className=" size-4" />
               <span>Billings </span>

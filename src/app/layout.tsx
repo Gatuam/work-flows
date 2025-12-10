@@ -13,8 +13,8 @@ const poppins = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "D-invoice",
-  description: "Control your tailor business with D-invoice",
+  title: "Workflows",
+  description: "Create workflows and automation ofr your business",
   icons: {
     icon: "/logo.svg",
   },
